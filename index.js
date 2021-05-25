@@ -5,18 +5,12 @@ const { Client } = require('pg');
 const Query 	 = require('pg').Query;
 const jwt 	 = require('jsonwebtoken');
 const bcrypt 	 = require('bcrypt')
-const saltRounds = 10;
-const secretKey  = "q1w2e3r4";
-const algorithm  = "HS256";
-const expiresIn  = "30m";
+const secretKey  = require('./config/my_settings').secretKey;
+const algorithm  = require('./config/my_settings').algorithm;
+const expiresIn  = require('./config/my_settings').expiresIn;
+const clientInfo = require('./config/my_settings').clientInfo;
 
-const client = new Client({
-	user 	 : 'fishingman99',
-	host 	 : 'localhost',
-	database : 'testdb',
-	password : '1q2w3e4r',
-	port 	 : 5432
-})
+const client 	 = new Client(clientInfo)
 
 app.use(express.json())
 
@@ -33,7 +27,7 @@ client.connect(err => {
 })
 
 
-app.post('/login-admin', function(req,res){
+app.post('/admin-login', function(req,res){
         let password = req.body.password
         let query    = `select password from admins where id=1;`
 
@@ -48,7 +42,7 @@ app.post('/login-admin', function(req,res){
 						var token = jwt.sign({ user_id : 1}, secretKey,{expiresIn : expiresIn})
 						res.send({'token':token})
 					} else {
-						res.send({'result' : 'WRONG_PASSWORD'})
+						res.send({"Message": "Invalid_paasword"})
 					}
                                 }
 			});
@@ -63,7 +57,7 @@ app.get('/movie-url', function(req, res){
 
 	client.query(query, function(err, result){
 		if(err){
-			res.send({'result':'error'})
+			res.send({"Message" : "Invalid_Language"})
 		} else {
 			res.send({'movie-url' : result.rows[0].movie-url})
 		}
