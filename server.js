@@ -25,6 +25,7 @@ const parseRawBody = (req, res, next) => {
 app.use(parseRawBody);
 
 app.use(cors());
+
 const client = new Client(clientInfo);
 
 http.listen(8000, "0.0.0.0", () => {
@@ -335,7 +336,7 @@ select count(*) from users where device_type='Mobile';
 select is_answer,  count(*) from user_answers inner join quizes on quiz_id = quizes.id where quiz_seq=1 group by is_answer;
 select is_answer,  count(*) from user_answers inner join quizes on quiz_id = quizes.id where quiz_seq=2 group by is_answer;
 select is_answer,  count(*) from user_answers inner join quizes on quiz_id = quizes.id where quiz_seq=3 group by is_answer;
-select is_answer,  count(*) from user_answers inner join quizes on quiz_id = quizes.id where quiz_seq=4 group by is_answer;                                                       
+select is_answer,  count(*) from user_answers inner join quizes on quiz_id = quizes.id where quiz_seq=4 group by is_answer;
 select is_answer,  count(*) from user_answers inner join quizes on quiz_id = quizes.id where quiz_seq=5 group by is_answer;
 select is_answer,  count(*) from user_answers inner join quizes on quiz_id = quizes.id where quiz_seq=6 group by is_answer;
 select is_answer,  count(*) from user_answers inner join quizes on quiz_id = quizes.id where quiz_seq=7 group by is_answer;
@@ -375,26 +376,7 @@ select is_answer,  count(*) from user_answers inner join quizes on quiz_id = qui
     }
   });
 });
-/*
 
-
-const WebSocket = require('ws');
- 
-const wss = new WebSocket.Server({ port: 3000 });
-var MSG = [] 
-wss.on('connection', function connection(ws) {
-	console.log('Websocket 연결 성공')
-  ws.on('message', function incoming(data) {
-    wss.clients.forEach(function each(client) {
-      if (!MSG.includes(data)) {
-        client.send(data);
-	MSG.push(data)
-	console.log(data)
-      }
-    });
-  });
-});
-*/
 var WebSocketServer = require("ws").Server;
 var wss = new WebSocketServer({ port: 3000 });
 var MSG = [];
