@@ -18,15 +18,15 @@ Admin
 
 ## 구현 화면
 
-![](https://images.velog.io/images/deonii/post/e24041c0-4de0-4aef-a893-077b6871e7c8/login.gif)
+![](https://images.velog.io/images/deonii/post/b6e30556-689b-438b-9040-08544db29ccf/login2.gif)
 
-![](https://images.velog.io/images/deonii/post/75022af7-b24f-4465-b941-3c5c96a4ad3c/quizflow.gif)
+![](https://images.velog.io/images/deonii/post/03eb6027-db12-4e7a-91b1-f3bc424fa0e2/quizflow2.gif)
 
-![](https://images.velog.io/images/deonii/post/090ec439-0397-41c8-ba7f-b66b34b91314/chart.gif)
+![](https://images.velog.io/images/deonii/post/5a16cad6-c0ca-4294-9977-96cf02120e13/chart2.gif)
 
 ## 🔧 기술 스택
-- ![Node.js](https://img.shields.io/badge/Node.js-14354C?style=for-the-badge&logo=python&logoColor=white)
-- ![express](https://img.shields.io/badge/express-092E20?style=for-the-badge&logo=django&logoColor=white)
+- ![Node.js](https://img.shields.io/badge/Node.js-14354C?style=for-the-badge&logo=node.js&logoColor=white)
+- ![express](https://img.shields.io/badge/express-092E20?style=for-the-badge&logo=express&logoColor=white)
 - ![Postgresql](https://img.shields.io/badge/Postgresql-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ## 🔧 협업 도구
